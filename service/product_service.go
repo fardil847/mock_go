@@ -22,7 +22,7 @@ func (service ProductService) GetOneProduct(id string) (*entity.Product, error) 
 func (service ProductService) GetAllProduct() ([]*entity.Product, error) {
 	products := service.Repository.FindAll()
 	if len(products) == 0 {
-		return nil, errors.New("No product found")
+		return nil, errors.New("Product not found")
 	}
 	return products, nil
 }
